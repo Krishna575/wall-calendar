@@ -9,91 +9,212 @@ A polished, interactive **wall calendar UI** built with Next.js, inspired by a p
 This application replicates the **look and feel of a real wall calendar**, combining a hero image with an interactive date grid and a notes section.
 
 Users can:
-- Select a **date range**
-- Add **notes for the month or selected dates**
-- Navigate across months
-- Experience a smooth and responsive UI
+
+* Select a **date range**
+* Add **notes for the month or selected dates**
+* Navigate across months
+* Experience a smooth and responsive UI
 
 ---
 
 ## ✨ Features
 
 ### 🗓 Calendar UI
-- Realistic **wall calendar aesthetic**
-- Hero image synchronized with month view
-- Clean layout with strong visual hierarchy
+
+* Realistic **wall calendar aesthetic**
+* Hero image synchronized with month view
+* Clean layout with strong visual hierarchy
 
 ### 📅 Date Range Selection
-- Select **start and end dates**
-- Automatic highlighting of:
-  - Start date
-  - End date
-  - Intermediate range
-- Smart reset on new selection
+
+* Select **start and end dates**
+* Automatic highlighting of:
+
+  * Start date
+  * End date
+  * Intermediate range
+* Smart reset on new selection
 
 ### 📝 Notes System
-- Add notes for:
-  - Entire month
-  - Selected date range
-- Persistent storage using `localStorage`
+
+* Add notes for:
+
+  * Entire month
+  * Selected date range
+* Persistent storage using `localStorage`
 
 ### 📱 Responsive Design
-- Desktop → Split layout (image + calendar + notes)
-- Mobile → Fully stacked layout
-- Touch-friendly interactions
+
+* Desktop → Split layout (image + calendar + notes)
+* Mobile → Fully stacked layout
+* Touch-friendly interactions
 
 ### 🎨 UI/UX Enhancements
-- Smooth animations using **Framer Motion**
-- Hover and selection feedback
-- Highlight for **current day**
-- Clean typography and spacing
+
+* Smooth animations using **Framer Motion**
+* Hover and selection feedback
+* Highlight for **current day**
 
 ---
 
 ## 🛠 Tech Stack
 
-- **Framework:** Next.js (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Animations:** Framer Motion
-- **Date Handling:** date-fns
-- **State Management:** React Hooks
-- **Persistence:** localStorage
+* **Framework:** Next.js (App Router)
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS
+* **Animations:** Framer Motion
+* **Date Handling:** date-fns
+* **State Management:** React Hooks
+* **Persistence:** localStorage
+
+---
+
+## 📦 How to Run This Project (Step-by-Step)
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/Krishna575/wall-calendar.git
+cd wall-calendar
+```
+
+---
+
+### 2️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+### 3️⃣ Run the Development Server
+
+```bash
+npm run dev
+```
+
+---
+
+### 4️⃣ Open in Browser
+
+```bash
+http://localhost:3000
+```
+
+---
+
+## 📱 How to Open on Mobile
+
+You can also test this project on your mobile device:
+
+### Step 1: Ensure project is running on laptop
+
+```bash
+npm run dev
+```
+
+### Step 2: Find your system IP address
+
+```bash
+ipconfig
+```
+
+Look for:
+
+```
+IPv4 Address: 192.168.x.x
+```
+
+### Step 3: Open on mobile browser
+
+```
+http://YOUR-IP:3000
+```
+
+Example:
+
+```
+http://192.168.1.5:3000
+```
+
+⚠️ Make sure:
+
+* Mobile and laptop are on same WiFi
+* Server is running
 
 ---
 
 ## 🧱 Architecture
 
-The project follows a **modular component-based architecture**:
+```
+app/
+  page.tsx
 
-### Key Design Decisions
-- Separation of UI and logic using custom hooks
-- Reusable components for scalability
-- Utility-based date handling for clarity and maintainability
+components/
+  Calendar.tsx
+  CalendarGrid.tsx
+  CalendarHeader.tsx
+  DateRangePicker.tsx
+  NotesPanel.tsx
+  HeroImage.tsx
+
+hooks/
+  useDateRange.ts
+  useLocalStorage.ts
+
+utils/
+  calendar.ts
+```
 
 ---
 
 ## ⚙️ How It Works
 
-### Date Range Logic
-- First click → Start date  
-- Second click → End date  
-- Third click → Reset selection  
+### Date Selection Logic
 
-### State Handling
-- `useDateRange` → manages selection logic  
-- `useLocalStorage` → persists notes and state  
+* First click → Start date
+* Second click → End date
+* Third click → Reset
 
-### Rendering
-- Calendar grid dynamically generated per month  
-- Conditional styling for range highlighting  
+### Notes Storage
+
+* Uses browser `localStorage`
+* Data persists even after refresh
 
 ---
 
-## 🚀 Getting Started
+## 🎥 Demo Video
 
-### 1️⃣ Install dependencies
-```bash
-npm install
-npm run dev
-http://localhost:3000
+(Add your video link here)
+
+---
+
+## 🌐 Live Demo
+
+(Add Vercel deployment link here)
+
+---
+
+## 💡 Key Highlights
+
+* Clean and scalable architecture
+* Real-world UI implementation
+* Fully responsive design
+* Smooth user experience
+
+---
+
+## 👨‍💻 Author
+
+**Krishnakumar**
+GitHub: https://github.com/Krishna575
+
+---
+
+## 🚀 Future Improvements
+
+* Theme switching
+* Drag-to-select dates
+* Event/holiday markers
+* Dark mode
