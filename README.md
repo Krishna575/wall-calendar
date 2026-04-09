@@ -184,17 +184,6 @@ utils/
 
 ---
 
-## 🎥 Demo Video
-
-(Add your video link here)
-
----
-
-## 🌐 Live Demo
-
-(Add Vercel deployment link here)
-
----
 
 ## 💡 Key Highlights
 
