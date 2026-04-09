@@ -1,48 +1,99 @@
-<<<<<<< HEAD
-# Wall Calendar
+# 📅 Interactive Wall Calendar Component
 
-A polished, interactive Next.js wall calendar component built to match the front-end engineering challenge.
+A polished, interactive **wall calendar UI** built with Next.js, inspired by a physical wall calendar layout. This project demonstrates strong frontend engineering skills including component architecture, state management, responsiveness, and UX design.
 
-## What it includes
+---
 
-- **Wall calendar aesthetic** with a hero image, month badge, and clean page layout
-- **Day range selection** with start, end, and in-range states
-- **Integrated notes area** with monthly and selected-range note persistence via `localStorage`
-- **Responsive design**: desktop two-column layout and stacked mobile layout
-- **Animations** using `framer-motion`
-- **Image loading** optimized with `next/image` and Unsplash remote patterns
+## 🎯 Project Overview
 
-## Project structure
+This application replicates the **look and feel of a real wall calendar**, combining a hero image with an interactive date grid and a notes section.
 
-- `app/page.tsx` — landing page rendering the calendar
-- `components/Calendar.tsx` — main calendar component
-- `components/HeroImage.tsx` — monthly hero image card
-- `components/CalendarHeader.tsx` — month navigation header
-- `components/CalendarGrid.tsx` — interactive calendar grid
-- `components/DateRangePicker.tsx` — selected range preview
-- `components/NotesPanel.tsx` — notes UI and persistence
-- `hooks/useDateRange.ts` — date-range selection state
-- `hooks/useLocalStorage.ts` — localStorage persistence hook
-- `utils/calendar.ts` — calendar day generation and range helpers
+Users can:
+- Select a **date range**
+- Add **notes for the month or selected dates**
+- Navigate across months
+- Experience a smooth and responsive UI
 
-## Run locally
+---
 
+## ✨ Features
+
+### 🗓 Calendar UI
+- Realistic **wall calendar aesthetic**
+- Hero image synchronized with month view
+- Clean layout with strong visual hierarchy
+
+### 📅 Date Range Selection
+- Select **start and end dates**
+- Automatic highlighting of:
+  - Start date
+  - End date
+  - Intermediate range
+- Smart reset on new selection
+
+### 📝 Notes System
+- Add notes for:
+  - Entire month
+  - Selected date range
+- Persistent storage using `localStorage`
+
+### 📱 Responsive Design
+- Desktop → Split layout (image + calendar + notes)
+- Mobile → Fully stacked layout
+- Touch-friendly interactions
+
+### 🎨 UI/UX Enhancements
+- Smooth animations using **Framer Motion**
+- Hover and selection feedback
+- Highlight for **current day**
+- Clean typography and spacing
+
+---
+
+## 🛠 Tech Stack
+
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Date Handling:** date-fns
+- **State Management:** React Hooks
+- **Persistence:** localStorage
+
+---
+
+## 🧱 Architecture
+
+The project follows a **modular component-based architecture**:
+
+### Key Design Decisions
+- Separation of UI and logic using custom hooks
+- Reusable components for scalability
+- Utility-based date handling for clarity and maintainability
+
+---
+
+## ⚙️ How It Works
+
+### Date Range Logic
+- First click → Start date  
+- Second click → End date  
+- Third click → Reset selection  
+
+### State Handling
+- `useDateRange` → manages selection logic  
+- `useLocalStorage` → persists notes and state  
+
+### Rendering
+- Calendar grid dynamically generated per month  
+- Conditional styling for range highlighting  
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Install dependencies
 ```bash
 npm install
 npm run dev
-```
-
-Then open `http://localhost:3000`.
-
-## Notes
-
-- This app is designed as a frontend-only interactive component.
-- No backend is used; notes persist in client-side `localStorage`.
-
-## Next steps for submission
-
-- Push this folder to a GitHub repository
-- Add a short demo video link and optional Vercel deployment link
-=======
-# wall-calendar
->>>>>>> 747ef33defe34329d0553fc81a609170c4c61342
+http://localhost:3000
