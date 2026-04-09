@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #0ea5e9;
+  --color-primary-dark: #0369a1;
+  --color-primary-light: #bae6fd;
+  --color-accent: #f59e0b;
+  --color-bg: #f0f4f8;
+  --color-surface: #ffffff;
+  --color-text: #1e293b;
+  --color-muted: #64748b;
+  --color-border: #e2e8f0;
+  --ring-color: rgba(14, 165, 233, 0.25);
+  --spiral-color: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Spiral / ring binding decoration */
+.spiral-holes {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 6px 0;
+}
+
+.spiral-hole {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  border: 2.5px solid var(--spiral-color);
+  position: relative;
+}
+
+.spiral-hole::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--spiral-color);
+}
+
+/* Day cell base */
+.day-cell {
+  @apply relative flex items-center justify-center cursor-pointer select-none transition-all duration-200;
+  font-family: "DM Sans", sans-serif;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 999px;
+}
+
+/* Focus ring */
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Glass morphism card */
+.glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Note line */
+.note-line {
+  border-bottom: 1.5px solid var(--color-border);
+  min-height: 28px;
+  transition: border-color 0.2s;
+}
+.note-line:focus-within {
+  border-color: var(--color-primary);
+}
+
+/* Range gradient bg for in-range days */
+.range-bg-left {
+  background: linear-gradient(to right, transparent 50%, var(--color-primary-light) 50%);
+}
+.range-bg-right {
+  background: linear-gradient(to left, transparent 50%, var(--color-primary-light) 50%);
+}
+.range-bg-mid {
+  background-color: var(--color-primary-light);
+}
+
+/* Page flip card */
+.page-card {
+  transform-style: preserve-3d;
+  perspective: 1200px;
+}
